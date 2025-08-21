@@ -1,0 +1,228 @@
+/*----------------------------------- general style---------------------------------------- */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+*{
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+button{
+    cursor: pointer;
+}
+.d-none{
+    display: none !important;
+}
+
+/* -------------------------------------------banner navbar----------------------------------- */
+
+.new-banner{
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: all 300ms ease-out;
+}
+
+.nav-container{
+    background-color: #F5F5F5;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+/*------- logo-------- */
+
+.logo-container{
+    width: 33.333%;
+}
+.logo{
+    width: 151.44px;
+    height: 19px;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*----------- links------- */
+
+.nav-links{
+    display: flex;
+    width: 66.666%;
+    justify-content: space-between;
+    align-items: center;
+}
+.link-2{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 10px 40px;
+    text-transform: uppercase;
+    gap: 15px;
+}
+.link-2 p{
+    margin: 0;
+}
+.menu-icon {
+    display: none;
+}
+
+/* media screen for  banner navbar in mobile screen */
+
+@media screen and (max-width: 840px) {
+    .nav-container{
+        flex-direction: column;
+        padding: 0px 10px 0px;
+        background-color: #ffffff;
+        position: relative;
+    }
+
+    .logo-container{
+        padding: 23px 112px 23px 16px;
+        gap: 78px;
+        box-shadow: 0px 2px 4px 0px rgba( 0, 0, 0, 0.15);
+        width: 100%;
+        background-color: #F7F7F7;
+        display: flex;
+        z-index: 10;
+    }
+    .menu-icon{
+        display: inline-block;
+        cursor: pointer;
+    }
+    .wrong-icon{
+        cursor: pointer;
+
+    }
+    .nav-links{
+        width: 100%;
+        padding: 25px 65.5px;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #F2F2F2;
+        z-index: 3;
+
+
+    }
+    .appear-links-list{
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+    .hide-links-list{
+        transform: translateY(-200px);
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease-in;
+    }
+}
+
+/*---------------------------------------------- banner frames----------------------------------------------------------- */
+
+/* --------banner frame-1--------- */
+.banner-sections{
+    padding-top: 70px;
+}
+
+.banner-freame-1{
+    width: 100%;
+    height: 402px;
+    background-image: url('../assets/banner-frame-1.png');
+    background-position: center;
+    background-size: cover;
+}
+
+/* ----------banner frame-2--------- */
+
+.banner-freame-2{
+    display: flex;
+}
+.banner-content{
+    width: 39%;
+}
+.frame2-img{
+    width: 61%;
+    background-image: url('../assets/banner-frame-2.png');
+    background-position: center;
+    background-size: cover;
+}
+/*--------- banner content ----------*/
+
+.banner-content{
+    padding: 10px 30px;
+}
+.banner-content h1{
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 70px;
+    margin: 0px;
+    padding: 10px 15px;
+    
+}
+.banner-content p{
+    font-size: 20px;
+    margin: 0;
+}
+.banner-content button p{
+    font-size: 16px;
+}
+
+/*---------- banner footer----------- */
+
+.banner-footer{
+    width: 100%;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+}
+.banner-footer p{
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0;
+}
+/* media screen for  banner frames in mobile screen */
+
+@media screen and (max-width: 840px) {
+    .banner-freame-1{
+        display: none;
+    }
+    .banner-freame-2{
+        flex-direction: column;
+    }
+    .banner-content{
+        width: 100%;
+    }
+    .banner-content h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .banner-content p{
+        font-size: 16px;
+        text-align: center;
+    }
+    .frame2-img{
+        width: 100%;
+        height: 264px;
+    }
+    .banner-sections{
+        position: relative;
+    }
+    .banner-content button{
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .banner-footer{
+        text-align: center;
+    }
+}

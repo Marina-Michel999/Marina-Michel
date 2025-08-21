@@ -1,0 +1,250 @@
+{% comment %}
+    connect with css file
+{% endcomment %}
+{{'section-banner.css' | asset_url | stylesheet_tag}}
+{% comment %}
+    styles depend on schema
+{% endcomment %}
+<style>
+    .link-2{
+        background: linear-gradient(to left, {{section.settings.nav_btn_background_color}} 50%, {{section.settings.nav_hover_btn_background_color}} 50%) right;
+        background-size: 200% 100%;
+        color:{{section.settings.nav_btn_color}};
+        transition: all 300ms ease-out;
+
+    
+    }
+    .link-2 svg{
+        fill:{{section.settings.nav_btn_color}};
+        transition: all 300ms ease-out;
+
+    }
+    .link-2:hover{
+        background-position: left;
+        color:{{section.settings.nav_hover_btn_color}};
+        transition: all 300ms ease-out;
+
+    }
+    .link-2:hover svg{
+        fill:{{section.settings.nav_hover_btn_color}};
+
+    }
+    .banner-content button{
+        display: flex;
+        align-items: center;
+        padding: 10px 15px 10px 45px;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin: 10px 0;
+        gap: 15px;
+        color: {{section.settings.banner_btn_color}};
+        background: linear-gradient(to left, {{section.settings.banner_btn_background_color}} 50%, {{section.settings.banner_btn_hover_background_color}} 50%) right;
+        background-size: 200% 100%;
+        border: none;
+        transition: all 300ms ease-out;
+    }
+    .banner-content button svg{
+        fill:{{section.settings.banner_btn_color}};
+        transition: all 300ms ease-out;
+
+    }
+    .banner-content button:hover{
+        color:{{section.settings.banner_hover_btn_color}};
+        background-position: left;
+        transition: all 300ms ease-out;
+
+    }
+    .banner-content button:hover svg{
+        fill:{{section.settings.banner_hover_btn_color}};
+        transition: all 300ms ease-out;
+
+    }
+    .banner-content button:hover img{
+        content: url("../assets/arrow-icon.svg");
+    } 
+</style>
+{% comment %}
+    end styles 
+{% endcomment %}
+{% comment %}
+    starting banner section html elements
+{% endcomment %}
+    <div class="new-banner">
+        {% comment %}
+            banner navbar
+        {% endcomment %}
+        <div class="navbar">
+            <div class="nav-container">
+                <div class="logo-container">
+                    {% comment %}
+                         icons for mobile screen
+                    {% endcomment %}
+                    <img
+                        class=" menu-icon"
+                        src="../assets/menu-icon.svg"
+                    />
+                    <img
+                        class="wrong-icon d-none"
+                        src="../assets/wrong-icon.svg"
+                    />
+                    <div class="logo">
+                        {% if section.settings.nav_logo != blank %}
+                        <img src="{{section.settings.nav_logo | asset_url}}"
+                        alt="logo"
+                        />
+                        {% else %}
+                        <img src="{{'logo-image.png' | asset_url}}"
+                        alt="logo"
+                        />
+                        {% endif %}
+                    </div> 
+                </div>            
+                <div class="nav-links hide-links-list">   
+                    <a class="link-1" href="#">{{section.settings.nav-link1}}</a>
+                    <a
+                    href="#"
+                    class="link-2 nav-btn"
+                    >
+                    <p>{{section.settings.nav_btn_text}}</p>
+                        <svg width="27" height="12" viewBox="0 0 27 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z"  />
+                        </svg>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% comment %}
+            banner frames
+        {% endcomment %}
+        <div class="banner-sections">
+            <div class="banner-freame-1">.</div>
+            <div class="banner-freame-2">
+                <div class="banner-content">
+                  <h1>{{section.settings.banner_title}}</h1>
+                  <p>{{section.settings.banner_content}}</p>
+                  <button>
+                    <p>shop now</p>
+                    <svg width="27" height="12" viewBox="0 0 27 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 5.25ZM26.5303 6.53033C26.8232 6.23743 26.8232 5.76256 26.5303 5.46967L21.7574 0.696697C21.4645 0.403804 20.9896 0.403804 20.6967 0.696697C20.4038 0.989591 20.4038 1.46446 20.6967 1.75736L24.9393 6L20.6967 10.2426C20.4038 10.5355 20.4038 11.0104 20.6967 11.3033C20.9896 11.5962 21.4645 11.5962 21.7574 11.3033L26.5303 6.53033ZM1 6.75L26 6.75L26 5.25L1 5.25L1 6.75Z" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="frame2-img">.</div>
+            </div>   
+            {% comment %}
+                banner footer
+            {% endcomment %}
+            <div class="banner-footer">
+                <p>{{section.settings.banner_footer}}</div></p>                     
+            </div>
+    </div>
+    {% comment %}
+        connect with js file
+    {% endcomment %}
+    <script
+    src="{{ 'navbar.js' | asset_url}}"
+    >
+    </script>
+{% comment %}
+    starting schema
+{% endcomment %}
+{% schema %}
+{
+    "name": "new banner section",
+    "settings":[
+        {
+            "type": "image_picker",
+            "id": "nav_logo",
+            "label": "logo"
+        },
+        {
+            "type": "text",
+            "id": "nav_btn_text",
+            "label": "button text",
+            "default": "choose gift"
+        },
+  
+        {
+            "type": "color",
+            "id": "nav_btn_background_color",
+            "label": "button background color",
+            "default": "#FFF544"
+        }
+        ,
+        {
+            "type": "color",
+            "id": "nav_hover_btn_background_color",
+            "label": "button background color",
+            "default": "#000000"
+        },
+       
+        {
+            "type": "color",
+            "id": "nav_btn_color",
+            "label": "button text color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "nav_hover_btn_color",
+            "label": "button hover text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "text",
+            "id": "nav-link1",
+            "label": "frist link",
+            "default":"find the ideal gift for your loved one"
+        },
+        {
+            "type": "text",
+            "id": "nav-link2",
+            "label": "second link",
+            "default":"choose gift"
+        },
+        {
+            "type": "text",
+            "id": "banner_title",
+            "label": "banner title",
+            "default":"The Gift Guide"
+        },
+        {
+            "type": "text",
+            "id": "banner_content",
+            "label": "banner content",
+            "default":"Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+        },
+        {
+            "type": "text",
+            "id": "banner_footer",
+            "label": "banner footer",
+            "default":"SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+        },
+        {
+            "type": "color",
+            "id": "banner_btn_background_color",
+            "label": "button background color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "banner_btn_hover_background_color",
+            "label": "button hover background color",
+            "default": "#FFF544"
+        },
+        {
+            "type": "color",
+            "id": "banner_btn_color",
+            "label": "button text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "banner_hover_btn_color",
+            "label": "button hover text color",
+            "default": "#000000"
+        }
+    ]
+}
+{% endschema %}
